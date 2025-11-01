@@ -1,0 +1,2956 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <title>SK KISHAN BUILDCON </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="author" content="SK KISHAN BUILDCON ">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <meta name="description" content="">
+    <!-- favicon icon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    <!-- style sheets and font icons  -->
+    <link rel="stylesheet" type="text/css" href="css/font-icons.min.css">
+    <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        :root {
+            --primary-color: #1a5a96;
+            --secondary-color: #007bff;
+            --text-color: #212529;
+            --text-light: #6c757d;
+            --bg-color: #f8f9fa;
+            --border-color: #e9ecef;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.06);
+        }
+
+        .h60 {
+            height: 60%
+        }
+
+        .font-blue {
+            color: #BF9A33;
+        }
+
+        .bg-blue {
+            background-color: #BF9A33;
+        }
+
+        footer .footer-logo img {
+            max-height: 64px;
+        }
+
+        .navbar .navbar-nav .nav-link {
+            padding: 25px 0;
+            font-weight: 300;
+            font-size: 16px;
+            margin: 0 18px;
+            word-break: normal;
+        }
+
+        .brands-showcase {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        /* --- BRAND NAVIGATION --- */
+        .brand-nav {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .brand-selector {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .brand-selector .logo-placeholder {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .brand-selector:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow-color);
+            color: var(--primary-color);
+        }
+
+        .brand-selector.active {
+            color: var(--card-bg);
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(0, 91, 234, 0.2);
+        }
+
+        .brand-selector.active .logo-placeholder {
+            background-color: var(--card-bg);
+        }
+
+        /* --- BRAND CONTENT PANE --- */
+        .brand-pane {
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .brand-pane.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .pane-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        /* Left Side: Text Content Card */
+        .pane-text-card {
+            flex: 1.2;
+            min-width: 0;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 8px 30px var(--shadow-color);
+        }
+
+        .pane-text-card h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .pane-text-card p.brand-intro {
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-light);
+            margin-bottom: 35px;
+        }
+
+        .pane-text-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+        }
+
+        .pane-text-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        .pane-text-card ul li {
+            font-size: 15px;
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 15px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .pane-text-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--secondary-color);
+            font-weight: 700;
+        }
+
+        .pane-text-card ul strong {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 3px;
+            color: var(--text-color);
+        }
+
+        .pane-text-card .brand-mission {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            margin-top: 40px;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 15px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* Right Side: Image Slider Card */
+        .pane-slider-card {
+            flex: 1;
+            position: sticky;
+            top: 40px;
+            overflow: hidden;
+            border-radius: 16px;
+            aspect-ratio: 4 / 3;
+            box-shadow: 0 8px 30px var(--shadow-color);
+            border: 1px solid var(--border-color);
+        }
+
+        .slider-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            flex-shrink: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+
+        .slider-btn:hover {
+            background-color: white;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .slider-btn.prev {
+            left: 15px;
+        }
+
+        .slider-btn.next {
+            right: 15px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .pane-layout {
+                flex-direction: column;
+            }
+
+            .pane-slider-card {
+                position: relative;
+                top: 0;
+                width: 100%;
+                margin-top: 30px;
+                aspect-ratio: 16 / 9;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 30px 15px;
+            }
+
+            .brand-nav {
+                gap: 10px;
+            }
+
+            .brand-selector {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .pane-layout {
+                padding: 0;
+                gap: 30px;
+            }
+
+            .pane-text-card {
+                padding: 30px;
+            }
+
+            .pane-text-card h2 {
+                font-size: 28px;
+            }
+
+            .pane-text-card h3 {
+                font-size: 18px;
+            }
+        }
+
+        /* gallery */
+        .gallery {
+            padding: 100px 0;
+            background-color: #ffffff;
+            position: relative;
+        }
+
+        .gallery-ellipse {
+            position: absolute;
+            width: 1446px;
+            height: 200px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ffffff;
+            border-radius: 50%;
+        }
+
+        .gallery-ellipse.top {
+            /* top: 100px; */
+        }
+
+        .gallery-ellipse.bottom {
+            bottom: 50px;
+        }
+
+        .gallery-slider {
+            overflow: hidden;
+            margin: 100px 0;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 10px;
+            animation: scroll 30s linear infinite;
+            width: fit-content;
+        }
+
+        .gallery-image {
+            width: 290px;
+            height: 482px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* services */
+        .cards {
+            --cards-text-color: white;
+            --cards-closed-size: 90px;
+            --animation-speed-normal: .5s;
+            --animation-speed-fast: .25s;
+
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .card {
+            width: 100%;
+            min-height: 300px;
+            overflow: hidden;
+            border-radius: 1rem;
+            position: relative;
+            z-index: 1;
+            transition: all var(--animation-speed-normal) ease-in-out;
+            cursor: pointer;
+        }
+
+        .card__image {
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            filter: brightness(.675) saturate(75%);
+            transition: filter var(--animation-speed-fast) ease-in-out;
+        }
+
+        .card:hover .card__image {
+            filter: brightness(.875) saturate(100%);
+        }
+
+        .card__infos {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            padding: 18px;
+            width: 100%;
+        }
+
+        .card__name {
+            margin: 0;
+            color: var(--cards-text-color);
+            transition: all var(--animation-speed-normal) ease-in-out;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .card__author {
+            margin: 0;
+            color: var(--cards-text-color);
+            text-decoration: none;
+            opacity: 0;
+            transform: translateY(.65rem);
+            transition:
+                opacity var(--animation-speed-fast) ease-in-out,
+                transform var(--animation-speed-normal) ease-in-out;
+            font-size: 14px;
+            line-height: 22px;
+        }
+
+        .card[active] .card__author {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card[active] .card__author {
+            opacity: .75;
+        }
+
+        @media screen and (min-width: 640px) {
+            .cards {
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                height: 22rem;
+                overflow: hidden;
+            }
+
+            .card {
+                flex: 0 1 var(--cards-closed-size);
+                /* collapses but can shrink */
+                height: 100%;
+                transition: flex 0.5s ease-in-out;
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                cursor: pointer;
+            }
+
+            .card[active] {
+                flex: 1;
+                width: 300px;
+                /* expand and take all available space */
+            }
+
+            /* collapsed title vertical */
+            .card__name {
+                position: absolute;
+                left: 0%;
+                top: 50%;
+                transform: rotate(-90deg) translate(-50%, -50%);
+                transform-origin: center;
+                white-space: nowrap;
+                font-size: 14px;
+                text-align: center;
+                width: max-content;
+                color: #fff;
+            }
+
+            .card[active] .card__name {
+                position: relative;
+                transform: none;
+                left: auto;
+                top: auto;
+                margin-bottom: 8px;
+                font-size: 18px;
+            }
+
+            /* text only visible in expanded */
+            .card__author {
+                opacity: 0;
+                transform: translateY(0.5rem);
+                transition: all 0.3s ease-in-out;
+            }
+
+            .card[active] .card__author {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        ::placeholder {
+            color: #bf9a33 !important;
+        }
+
+        .gap10 {
+            gap: 10px;
+        }
+
+        /* testimonial */
+    </style>
+</head>
+
+<body data-mobile-nav-style="classic">
+    <!-- start header -->
+    <header class="d-none">
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light header-light  fixed-top header-always-fixed-scroll">
+            <div class="container-lg nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" class="default-logo" alt="">
+                        <img src="images/logo.png" class="alt-logo" alt="">
+                        <img src="images/logo.png" class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto col-lg-9 menu-order px-lg-0">
+                    <button class="navbar-toggler float-end" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item"><a href="#home" class="inner-link nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#about" class="inner-link nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="#amenities" class="inner-link nav-link">Amenities</a>
+                            </li>
+
+                            <li class="nav-item"><a href="#gallery" class="inner-link nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="#location" class="inner-link nav-link">Location</a></li>
+                            <li class="nav-item"><a href="#projects" class="inner-link nav-link">Our Projects</a></li>
+
+
+                            <li class="nav-item"><a href="#contact" class="inner-link nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+        <!-- end navigation -->
+    </header>
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light header-light fixed-top header-always-fixed-scroll">
+            <div class="container-lg nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 me-auto ps-lg-0">
+                    <a class="navbar-brand" href="#">
+                        <img src="images/logo.png" class="default-logo" alt="">
+                        <img src="images/logo.png" class="alt-logo" alt="">
+                        <img src="images/logo.png" class="mobile-logo" alt="">
+                    </a>
+                </div>
+                <div class="col-auto col-lg-9 menu-order px-lg-0">
+                    <!-- keep your existing toggler but we'll wire it to our custom offcanvas -->
+                    <button class="navbar-toggler float-end" type="button" id="mobileMenuToggle"
+                        aria-controls="mobileOffcanvas" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item"><a href="#home" class="inner-link nav-link">Home</a></li>
+                            <li class="nav-item"><a href="#about" class="inner-link nav-link">About Us</a></li>
+                            <li class="nav-item"><a href="#amenities" class="inner-link nav-link">Amenities</a></li>
+                            <li class="nav-item"><a href="#gallery" class="inner-link nav-link">Gallery</a></li>
+                            <li class="nav-item"><a href="#location" class="inner-link nav-link">Location</a></li>
+                            <li class="nav-item"><a href="#projects" class="inner-link nav-link">Our Projects</a></li>
+                            <li class="nav-item"><a href="#contact" class="inner-link nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- end navigation -->
+
+        <!-- MOBILE OFFCANVAS (right to left) -->
+        <div id="mobileOffcanvasBackdrop" class="mobile-offcanvas-backdrop" aria-hidden="true"></div>
+
+        <aside id="mobileOffcanvas" class="mobile-offcanvas" role="menu" aria-hidden="true"
+            aria-labelledby="mobileMenuToggle">
+            <div class="mobile-offcanvas-header">
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.png" class="mobile-logo" alt="">
+                </a>
+                <button id="mobileMenuClose" class="mobile-offcanvas-close" aria-label="Close menu">&times;</button>
+            </div>
+            <nav class="mobile-offcanvas-nav" aria-label="Mobile main navigation">
+                <ul class="mobile-nav-list alt-font">
+                    <li><a href="#home" class="mobile-nav-link">Home</a></li>
+                    <li><a href="#about" class="mobile-nav-link">About Us</a></li>
+                    <li><a href="#amenities" class="mobile-nav-link">Amenities</a></li>
+                    <li><a href="#gallery" class="mobile-nav-link">Gallery</a></li>
+                    <li><a href="#location" class="mobile-nav-link">Location</a></li>
+                    <li><a href="#projects" class="mobile-nav-link">Our Projects</a></li>
+                    <li><a href="#contact" class="mobile-nav-link">Contact Us</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <style>
+            /* Offcanvas backdrop */
+            .mobile-offcanvas-backdrop {
+                position: fixed;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.45);
+                opacity: 0;
+                visibility: hidden;
+                transition: opacity 220ms ease, visibility 220ms;
+                z-index: 1048;
+                /* above header */
+            }
+
+            /* Offcanvas panel */
+            .mobile-offcanvas {
+                position: fixed;
+                top: 0;
+                right: 0;
+                height: 100vh;
+                width: 320px;
+                /* adjust width as needed */
+                max-width: 85%;
+                background: #ffffff;
+                box-shadow: -8px 0 30px rgba(0, 0, 0, 0.15);
+                transform: translateX(100%);
+                transition: transform 300ms cubic-bezier(.2, .8, .2, 1);
+                z-index: 1049;
+                /* above backdrop */
+                display: flex;
+                flex-direction: column;
+                padding: 18px;
+                box-sizing: border-box;
+            }
+
+            /* Header inside offcanvas */
+            .mobile-offcanvas-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 12px;
+                padding-bottom: 8px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            }
+
+            .mobile-offcanvas-close {
+                background: transparent;
+                border: none;
+                font-size: 2.1rem;
+                line-height: 1;
+                cursor: pointer;
+                padding: 4px 8px;
+                color: #222;
+            }
+
+            .mobile-offcanvas-nav {
+                margin-top: 18px;
+                overflow-y: auto;
+            }
+
+            .mobile-nav-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 0px;
+            }
+
+            .mobile-nav-link {
+                display: block;
+                padding: 12px 6px;
+                text-decoration: none;
+                color: #222;
+                font-size: 1.05rem;
+                font-weight: 600;
+            }
+
+            .mobile-nav-link:focus,
+            .mobile-nav-link:hover {
+                background: rgba(191, 154, 51, 0.08);
+                outline: none;
+            }
+
+            /* When open: show backdrop and slide in panel */
+            .mobile-offcanvas-open .mobile-offcanvas-backdrop {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .mobile-offcanvas-open .mobile-offcanvas {
+                transform: translateX(0);
+            }
+
+            /* prevent body scroll when offcanvas open */
+            .mobile-offcanvas-open body {
+                overflow: hidden;
+                touch-action: none;
+            }
+
+            /* Hide the custom offcanvas on larger screens (desktop) */
+            @media (min-width: 992px) {
+
+                .mobile-offcanvas,
+                .mobile-offcanvas-backdrop {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script>
+            (function () {
+                const toggle = document.getElementById('mobileMenuToggle');
+                const closeBtn = document.getElementById('mobileMenuClose');
+                const offcanvas = document.getElementById('mobileOffcanvas');
+                const backdrop = document.getElementById('mobileOffcanvasBackdrop');
+
+                // Helper to open/close
+                function openMenu() {
+                    document.documentElement.classList.add('mobile-offcanvas-open');
+                    // mark aria states
+                    offcanvas.setAttribute('aria-hidden', 'false');
+                    backdrop.setAttribute('aria-hidden', 'false');
+                    toggle.setAttribute('aria-expanded', 'true');
+                    // give focus to first link for accessibility
+                    const firstLink = offcanvas.querySelector('.mobile-nav-link');
+                    if (firstLink) firstLink.focus();
+                }
+
+                function closeMenu() {
+                    document.documentElement.classList.remove('mobile-offcanvas-open');
+                    offcanvas.setAttribute('aria-hidden', 'true');
+                    backdrop.setAttribute('aria-hidden', 'true');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    // return focus to toggle for keyboard users
+                    toggle.focus();
+                }
+
+                // Toggle on button
+                toggle.addEventListener('click', function (e) {
+                    const expanded = this.getAttribute('aria-expanded') === 'true';
+                    if (expanded) closeMenu();
+                    else openMenu();
+                });
+
+                // close on close button
+                closeBtn.addEventListener('click', closeMenu);
+
+                // close when clicking backdrop
+                backdrop.addEventListener('click', closeMenu);
+
+                // close when clicking any mobile menu link
+                offcanvas.addEventListener('click', function (e) {
+                    const link = e.target.closest('.mobile-nav-link');
+                    if (link) {
+                        // allow normal anchor navigation but also close UI
+                        closeMenu();
+                    }
+                });
+
+                // close on Escape
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && document.documentElement.classList.contains('mobile-offcanvas-open')) {
+                        closeMenu();
+                    }
+                });
+
+                // Prevent focus from escaping offcanvas when open (basic trap)
+                document.addEventListener('focusin', function (e) {
+                    if (!document.documentElement.classList.contains('mobile-offcanvas-open')) return;
+                    if (!offcanvas.contains(e.target) && e.target !== toggle) {
+                        // if focusing outside, bring focus back to offcanvas
+                        const first = offcanvas.querySelector('.mobile-nav-link');
+                        if (first) first.focus();
+                    }
+                }, true);
+            })();
+        </script>
+    </header>
+
+    <!-- end header -->
+    <!-- start section -->
+    <div id="home">
+        <div class="container-fluid position-relative">
+            <div class="row">
+                <div class="swiper-container white-move full-screen md-h-650px sm-h-500px"
+                    data-slider-options='{ "slidesPerView": 1, "loop": false, "autoplay": { "delay": 4500, "disableOnInteraction": false },  "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
+                    <div class="swiper-wrapper">
+                        <!-- start slider item -->
+                        <div class="swiper-slide cover-background" style="background-image:url('images/banner.png');">
+                            <div class="container h-100">
+                                <div class="row justify-content-center h-100">
+                                    <div
+                                        class="col-12 col-xl-6 col-sm-7 d-flex flex-column justify-content-end pb-5 text-center h-100">
+
+                                        <!-- <a href="clermont.php"
+                                            class="btn btn-large btn-black btn-slide-up-bg d-table d-lg-inline-block lg-margin-15px-bottom md-margin-auto-lr align-self-center">Explore
+                                            Project<span class="bg-white"></span></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="about">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-5  col-md-5 ">
+                    <img src="images/about.png" alt="">
+                </div>
+                <div class="col-lg-6 offset-xl-1 col-md-6 ">
+                    <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                        <div class="media-body flex-grow-1 mt-5 mt-md-0"><span class="font-blue text-uppercase">About
+                                us</span></div>
+                        <span
+                            class="w-75percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    </div>
+                    <h4
+                        class=" alt-font text-extra-dark-gray font-weight-400  margin-35px-bottom lg-w-100 sm-margin-25px-bottom">
+                        SK KISHAN BUILDCON </h4>
+                    <p class="text-extra-dark-gray text-medium"> We have built relationship through its structures. This
+                        relationships are based on trust and dependability. The company has achieved reputation by
+                        providing Quality Construction, Good Service and Timely Delivery. Satisfaction and confidence of
+                        our customer is our biggest award and we constantly thrive for the best. </p>
+
+
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <section id="service" class="d-none">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-12  col-md-5 ">
+                    <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                        <div class="media-body flex-grow-1"><span class="font-blue text-uppercase">OUR SERVICES</span>
+                        </div>
+                        <span
+                            class="w-85percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    </div>
+                </div>
+                <div class="row align-items-start mx-2">
+                    <div class="col-lg-5  col-md-5 ">
+                        <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                            <p class="text-extra-dark-gray text-medium">Explore the range of exceptional design
+                                solutions we
+                                offer, tailored to suit your residential, commercial, restaurant, and public spaces.
+                            </p>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7  col-md-5 ">
+                        <div class="cards">
+                            <div class="card " active>
+                                <img src="images/service1.png" alt="" class="card__image">
+                                <div class="card__infos">
+                                    <h3 class="card__name">INTERIOR DESIGN</h3>
+                                    <a class="card__author">Crafting extraordinary design concepts for residential,
+                                        commercial, restaurant, and public environments.</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="images/service2.png" alt="" class="card__image">
+                                <div class="card__infos">
+                                    <h3 class="card__name">Space Optimization</h3>
+                                    <a class="card__author">Maximizing the use of available space to enhance
+                                        functionality and visual appeal.</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="images/service3.png" alt="" class="card__image">
+                                <div class="card__infos">
+                                    <h3 class="card__name">Turnkey Projects</h3>
+                                    <a class="card__author">Seamlessly transforming spaces with end-to-end turnkey
+                                        interior solutions.</a>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <img src="images/service4.png" alt="" class="card__image">
+                                <div class="card__infos">
+                                    <h3 class="card__name">3D Renders</h3>
+                                    <a class="card__author">Bringing your vision to life with photorealistic 3D
+                                        renders.</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <div class="big-section top-bottom-60px" id="clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-11 col-xl-6 col-md-6 sm-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.1s"
+                    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+
+                    <h4 class="text-extra-dark-gray alt-font font-weight-400  mb-0 Raleway-font">OUR TRUSTED
+                        <br>CLIENTS
+                    </h4>
+                </div>
+                <div class="col-12 col-xl-6 col-md-6 wow animate__fadeIn" data-wow-delay="0.2s"
+                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <p class="text-medium line-height-28px Raleway-font text-blue">We have built relationship through
+                        its structures. This relationships are based on trust and dependability. The company has
+                        achieved reputation by providing Quality Construction, Good Service and Timely Delivery.
+                    </p>
+                    <!-- <a href="our-services.html" class="btn btn-link btn-extra-large text-extra-dark-gray">Explore
+                                services</a> -->
+                </div>
+            </div>
+            <img src="images/client-bg.png" alt="" class="w-100 mt-4">
+            <div class="row mt-4">
+                <div class="col-12 col-md-4">
+                    <img src="images/total-sqft.png" alt="">
+                </div>
+                <div class="col-12 col-md-4 mt-5 mt-md-0">
+                    <img src="images/happy-family.png" alt="">
+                </div>
+                <div class="col-12 col-md-4 mt-5 mt-md-0">
+                    <img src="images/yr-trust.png" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <section id="amenities">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12  col-md-5 ">
+                    <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                        <div class="media-body flex-grow-1"><span class="font-blue text-uppercase">OUR AMENITIES</span>
+                        </div>
+                        <span
+                            class="w-80percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    </div>
+                    <h4
+                        class="w-50percent alt-font text-extra-dark-gray font-weight-400  margin-15px-bottom lg-w-100 sm-margin-25px-bottom">
+                        Enjoy Life In Every Step</h4>
+                    <p class="text-extra-dark-gray text-medium"> With the ever increasing need for space and a zeal to
+                        own the best, we know modern home owners yearn for. So to hold true to our word of improved
+                        lifestyles and enhanced living that boast a smooth way of life, and making it picture perfect
+                        are the finest amenities and facilities, seamlessly integrated throughout the project to
+                        compliment the lifestyle.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <style>
+            .property-slider-container {
+                max-width: 1400px;
+                width: 100%;
+                position: relative;
+            }
+
+            .property-slider-wrapper {
+                position: relative;
+                overflow: visible;
+                padding: 40px 0;
+            }
+
+            .property-slides-track {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 20px;
+                transition: transform 0.5s ease-in-out;
+                position: relative;
+            }
+
+            .property-slide-item {
+                flex-shrink: 0;
+                transition: all 0.5s ease-in-out;
+                border-radius: 20px;
+                overflow: hidden;
+                position: relative;
+            }
+
+            .property-slide-item img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+
+            /* Center slide - largest */
+            .property-slide-item.slide-center {
+                width: 100%;
+                height: auto;
+                z-index: 3;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                border-radius: 40px;
+            }
+
+            /* Side slides - smaller and slightly faded */
+            .property-slide-item.slide-left,
+            .property-slide-item.slide-right {
+                width: 400px;
+                height: 350px;
+                opacity: 0.6;
+                z-index: 1;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            }
+
+            .property-slide-item.slide-left:hover,
+            .property-slide-item.slide-right:hover {
+                opacity: 0.8;
+                cursor: pointer;
+            }
+
+            .property-slide-item.slide-hidden {
+                display: none;
+            }
+
+            .property-nav-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(255, 255, 255, 0.9);
+                border: none;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                color: #333;
+                transition: all 0.3s ease;
+                z-index: 10;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .property-nav-btn:hover {
+                background: white;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            .property-nav-btn:active {
+                transform: translateY(-50%) scale(0.95);
+            }
+
+            .property-nav-prev {
+                left: 20px;
+            }
+
+            .property-nav-next {
+                right: 20px;
+            }
+
+            .property-indicator-wrapper {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                gap: 15px;
+                margin-top: 30px;
+                padding: 15px;
+                /* background: white; */
+                border-radius: 50px;
+                /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                float: right;
+            }
+
+            .property-nav-arrow {
+                background: none;
+                border: none;
+                font-size: 18px;
+                color: #999;
+                cursor: pointer;
+                padding: 5px 10px;
+                transition: color 0.3s ease;
+            }
+
+            .property-nav-arrow:hover {
+                color: #333;
+            }
+
+            .property-counter-display {
+                font-size: 18px;
+                color: #666;
+                font-weight: 500;
+                min-width: 50px;
+                text-align: center;
+            }
+
+            .property-counter-display .current-slide-num {
+                color: #BF9A33;
+                font-weight: 700;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 1200px) {
+                .property-slide-item.slide-center {
+                    width: 550px;
+                    height: 380px;
+                }
+
+                .property-slide-item.slide-left,
+                .property-slide-item.slide-right {
+                    width: 300px;
+                    height: 280px;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .property-slide-item.slide-center {
+                    width: 400px;
+                    height: 300px;
+                }
+
+                .property-slide-item.slide-left,
+                .property-slide-item.slide-right {
+                    width: 150px;
+                    height: 200px;
+                }
+
+                .property-nav-btn {
+                    width: 40px;
+                    height: 40px;
+                    font-size: 20px;
+                }
+
+                .property-nav-prev {
+                    left: 10px;
+                }
+
+                .property-nav-next {
+                    right: 10px;
+                }
+            }
+
+            @media (max-width: 480px) {
+
+                .property-slide-item.slide-left,
+                .property-slide-item.slide-right {
+                    display: none;
+                }
+
+                .property-slide-item.slide-center {
+                    width: 100%;
+                    max-width: 350px;
+                    height: 250px;
+                }
+            }
+        </style>
+        <div class="container">
+            <div class="property-slider-container">
+                <div class="property-slider-wrapper">
+                    <div class="property-slides-track" id="slidesTrack">
+                        <div class="property-slide-item" data-index="0">
+                            <img src="images/slider.png" alt="Modern apartment courtyard">
+                        </div>
+                        <div class="property-slide-item" data-index="1">
+                            <img src="images/slider.png" alt="Luxury building exterior">
+                        </div>
+                        <div class="property-slide-item" data-index="2">
+                            <img src="images/slider.png" alt="Contemporary home interior">
+                        </div>
+                        <div class="property-slide-item" data-index="3">
+                            <img src="images/slider.png" alt="Beautiful living space">
+                        </div>
+                        <div class="property-slide-item" data-index="4">
+                            <img src="images/slider.png" alt="Modern architecture">
+                        </div>
+                    </div>
+
+                    <button class="property-nav-btn property-nav-prev d-none" aria-label="Previous slide">‹</button>
+                    <button class="property-nav-btn property-nav-next d-none" aria-label="Next slide">›</button>
+                </div>
+
+                <div class="property-indicator-wrapper">
+                    <span
+                        class="w-80percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    <button class="property-nav-arrow property-arrow-left" aria-label="Previous">‹</button>
+                    <div class="property-counter-display">
+                        <span class="current-slide-num">1</span>/<span class="total-slides-num">5</span>
+                    </div>
+                    <button class="property-nav-arrow property-arrow-right" aria-label="Next">›</button>
+                </div>
+            </div>
+
+            <script>
+                const slidesTrack = document.getElementById('slidesTrack');
+                const slides = document.querySelectorAll('.property-slide-item');
+                const prevBtn = document.querySelector('.property-nav-prev');
+                const nextBtn = document.querySelector('.property-nav-next');
+                const arrowLeft = document.querySelector('.property-arrow-left');
+                const arrowRight = document.querySelector('.property-arrow-right');
+                const currentNumDisplay = document.querySelector('.current-slide-num');
+                const totalNumDisplay = document.querySelector('.total-slides-num');
+
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+
+                totalNumDisplay.textContent = totalSlides;
+
+                function updateSlider() {
+                    // Always show left, center, and right slides in a loop
+                    const leftIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    const rightIndex = (currentIndex + 1) % totalSlides;
+
+                    // Clear the track and rebuild with correct order
+                    slidesTrack.innerHTML = '';
+
+                    // Add left slide
+                    const leftSlide = slides[leftIndex].cloneNode(true);
+                    leftSlide.classList.add('slide-left');
+                    slidesTrack.appendChild(leftSlide);
+
+                    // Add center slide
+                    const centerSlide = slides[currentIndex].cloneNode(true);
+                    centerSlide.classList.add('slide-center');
+                    slidesTrack.appendChild(centerSlide);
+
+                    // Add right slide
+                    const rightSlide = slides[rightIndex].cloneNode(true);
+                    rightSlide.classList.add('slide-right');
+                    slidesTrack.appendChild(rightSlide);
+
+                    currentNumDisplay.textContent = currentIndex + 1;
+
+                    // Re-attach click listeners to cloned slides
+                    attachSlideClickListeners();
+                }
+
+                function attachSlideClickListeners() {
+                    const leftSlide = document.querySelector('.slide-left');
+                    const rightSlide = document.querySelector('.slide-right');
+
+                    if (leftSlide) {
+                        leftSlide.addEventListener('click', goToPrev);
+                    }
+                    if (rightSlide) {
+                        rightSlide.addEventListener('click', goToNext);
+                    }
+                }
+
+                function goToNext() {
+                    currentIndex = (currentIndex + 1) % totalSlides;
+                    updateSlider();
+                }
+
+                function goToPrev() {
+                    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                    updateSlider();
+                }
+
+                nextBtn.addEventListener('click', goToNext);
+                prevBtn.addEventListener('click', goToPrev);
+                arrowRight.addEventListener('click', goToNext);
+                arrowLeft.addEventListener('click', goToPrev);
+
+                // Click on side images to navigate
+                slidesTrack.addEventListener('click', (e) => {
+                    const clickedSlide = e.target.closest('.property-slide-item');
+                    if (clickedSlide) {
+                        if (clickedSlide.classList.contains('slide-left')) {
+                            goToPrev();
+                        } else if (clickedSlide.classList.contains('slide-right')) {
+                            goToNext();
+                        }
+                    }
+                });
+
+                // Keyboard navigation
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') goToPrev();
+                    if (e.key === 'ArrowRight') goToNext();
+                });
+
+                // Touch swipe support
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                slidesTrack.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                });
+
+                slidesTrack.addEventListener('touchend', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    if (touchStartX - touchEndX > 50) goToNext();
+                    if (touchEndX - touchStartX > 50) goToPrev();
+                });
+
+                // Initialize
+                updateSlider();
+            </script>
+        </div>
+    </section>
+
+    <section class="big-section" id="location">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 col-xl-12 col-md-12 sm-margin-30px-bottom wow animate__fadeIn" data-wow-delay="0.1s"
+                    style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                    <img src="images/location-heading.png" alt="" class="forWeb">
+                    <h4 class="forMobile alt-font text-extra-dark-gray font-weight-400 text-center">Explore Location
+                    </h4>
+                </div>
+
+            </div>
+        </div>
+        <div class=" container-fluid mt-5">
+            <div class="row justify-content-center">
+                <div class="forWeb  col-xl-12 col-lg-12 col-md-12 position-relative text-center wow animate__fadeIn"
+                    data-wow-delay="0.4s">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.0912787816605!2d72.7780963742013!3d19.708737631806354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71d0069667799%3A0xf58774af90d5bbcf!2sSK%20Kishan%20Resi%20HCC%20Project!5e0!3m2!1sen!2sin!4v1761629800908!5m2!1sen!2sin"
+                        width="85%" height="450" style="border:1px solid #efefef; border-radius: 20px; padding: 20px;"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="forMobile  col-xl-12 col-lg-12 col-md-12 position-relative text-center wow animate__fadeIn"
+                    data-wow-delay="0.4s">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3756.0912787816605!2d72.7780963742013!3d19.708737631806354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be71d0069667799%3A0xf58774af90d5bbcf!2sSK%20Kishan%20Resi%20HCC%20Project!5e0!3m2!1sen!2sin!4v1761629800908!5m2!1sen!2sin"
+                        width="96%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="big-section">
+
+            <div class="container mt-md-5 mt-5">
+                <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2">
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/airport.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Palghar
+                                    Airport</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/bullettrain.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Bullet
+                                    Train</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/westtrain.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Western
+                                    Railway Line</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/ship.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Ro
+                                    - Ro
+                                    Service</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/road.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Western
+                                    Express</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+                    <div class="col margin-20px-bottom sm-margin-15px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+                        <!-- start feature box item -->
+                        <div class="feature-box feature-box-left-icon outer-border btn-style700">
+                            <div class="feature-box-icon inner-border">
+                                <img src="images/metro.png" class="w-36" alt="">
+                            </div>
+                            <div class="feature-box-content last-paragraph-no-margin">
+                                <span
+                                    class="line-height-24px line-height-32px-mob font-size-18 Raleway-font alt-font font-weight-500 mt-md-1 d-block text-gold">Metro
+                                    Line G</span>
+                            </div>
+                        </div>
+                        <!-- end feature box item -->
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="big-section" id="gallery">
+        <div class="container">
+
+            <div class="row align-items-center justify-content-center">
+                <img src="images/gallery-heading.png" alt="" class="forWeb">
+                <h4 class="forMobile  alt-font text-extra-dark-gray font-weight-400 text-center">Gallery
+                </h4>
+                <style>
+                    * {
+                        margin: 0;
+                        padding: 0;
+                        box-sizing: border-box;
+                    }
+
+
+
+                    .gallery__wrapper {
+                        background: white;
+                        border-radius: 20px;
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+                        overflow: hidden;
+                        max-width: 1100px;
+                        width: 100%;
+                        margin-top: 60px;
+                    }
+
+                    .gallery__container {
+                        display: flex;
+                        min-height: 500px;
+                    }
+
+                    .gallery__image-section {
+                        flex: 1;
+                        position: relative;
+                        overflow: hidden;
+                        background: #f0f0f0;
+                    }
+
+                    .gallery__image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        display: none;
+                    }
+
+                    .gallery__image.active__slide {
+                        display: block;
+                    }
+
+                    .gallery__content-section {
+                        flex: 1;
+                        padding: 60px 50px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        background: #fafafa;
+                    }
+
+                    .gallery__text-content {
+                        display: none;
+                    }
+
+                    .gallery__text-content.active__content {
+                        display: block;
+                    }
+
+                    .gallery__heading {
+                        font-size: 32px;
+                        color: #333;
+                        margin-bottom: 25px;
+                        font-weight: 600;
+                        position: relative;
+                        padding-bottom: 15px;
+                    }
+
+                    .gallery__heading::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 60px;
+                        height: 3px;
+                        background: linear-gradient(90deg, #bf9a33, #bf9a33);
+                    }
+
+                    .gallery__description {
+                        color: #666;
+                        line-height: 1.8;
+                        font-size: 16px;
+                    }
+
+                    .gallery__controls {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-end;
+                        gap: 20px;
+                        margin-top: 30px;
+                    }
+
+                    .gallery__nav-btn {
+                        background: none;
+                        border: none;
+                        color: #bf9a33;
+                        font-size: 24px;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        width: 40px;
+                        height: 40px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                    }
+
+                    .gallery__nav-btn:hover {
+                        background: #bf9a33;
+                        color: white;
+                        transform: scale(1.1);
+                    }
+
+                    .gallery__nav-btn:disabled {
+                        opacity: 0.3;
+                        cursor: not-allowed;
+                    }
+
+                    .gallery__nav-btn:disabled:hover {
+                        background: none;
+                        color: #bf9a33;
+                        transform: scale(1);
+                    }
+
+                    .gallery__counter {
+                        color: #999;
+                        font-size: 16px;
+                        font-weight: 500;
+                    }
+
+                    .gallery__counter-current {
+                        color: #bf9a33;
+                        font-weight: 600;
+                    }
+
+                    @media (max-width: 768px) {
+                        .gallery__container {
+                            flex-direction: column;
+                        }
+
+                        .gallery__image-section {
+                            min-height: 300px;
+                        }
+
+                        .gallery__content-section {
+                            padding: 40px 30px;
+                        }
+
+                        .gallery__heading {
+                            font-size: 24px;
+                        }
+                    }
+                </style>
+
+
+                <div class="col-12 col-xl-12 col-md-12 wow animate__fadeIn" data-wow-delay="0.2s">
+                    <div class="gallery__wrapper">
+                        <div class="gallery__container">
+                            <div class="gallery__image-section">
+                                <img src="images/lawn.png" alt="Lawn Area" class="gallery__image active__slide">
+                                <img src="images/lawn.png" alt="Apartment Building" class="gallery__image">
+                                <img src="images/lawn.png" alt="Swimming Pool" class="gallery__image">
+                                <img src="images/lawn.png" alt="Gym Area" class="gallery__image">
+                            </div>
+
+                            <div class="gallery__content-section">
+                                <div>
+                                    <div class="gallery__text-content active__content">
+
+                                        <h2 class="gallery__heading">Lawn Area</h2>
+                                        <p class="gallery__description">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                            tempor
+                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                            nostrud
+                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </div>
+
+                                    <div class="gallery__text-content">
+
+                                        <h2 class="gallery__heading">Apartment Building</h2>
+                                        <p class="gallery__description">
+                                            Experience modern living at its finest with our contemporary apartment
+                                            buildings.
+                                            Featuring spacious layouts, premium finishes, and stunning city views that
+                                            redefine
+                                            urban lifestyle.
+                                        </p>
+                                    </div>
+
+                                    <div class="gallery__text-content">
+                                        <h2 class="gallery__heading">Swimming Pool</h2>
+                                        <p class="gallery__description">
+                                            Dive into luxury with our resort-style swimming pool. Perfect for relaxation
+                                            and
+                                            recreation, offering a refreshing escape right at your doorstep with
+                                            comfortable
+                                            lounge areas.
+                                        </p>
+                                    </div>
+
+                                    <div class="gallery__text-content">
+                                        <h2 class="gallery__heading">Gym Area</h2>
+                                        <p class="gallery__description">
+                                            Stay fit and healthy in our state-of-the-art fitness center. Equipped with
+                                            modern
+                                            equipment and professional trainers to help you achieve your wellness goals.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="gallery__controls">
+                                    <button class="gallery__nav-btn gallery__btn-prev"
+                                        onclick="navigateSlides(-1)">&#8249;</button>
+                                    <span class="gallery__counter">
+                                        <span class="gallery__counter-current">1</span> / 4
+                                    </span>
+                                    <button class="gallery__nav-btn gallery__btn-next"
+                                        onclick="navigateSlides(1)">&#8250;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <script>
+                        let currentSlideIndex = 0;
+                        const imageSlides = document.querySelectorAll('.gallery__image');
+                        const textContents = document.querySelectorAll('.gallery__text-content');
+                        const counterDisplay = document.querySelector('.gallery__counter-current');
+                        const prevButton = document.querySelector('.gallery__btn-prev');
+                        const nextButton = document.querySelector('.gallery__btn-next');
+                        const totalSlideCount = imageSlides.length;
+
+                        function displaySlide(index) {
+                            imageSlides.forEach(img => img.classList.remove('active__slide'));
+                            textContents.forEach(txt => txt.classList.remove('active__content'));
+
+                            imageSlides[index].classList.add('active__slide');
+                            textContents[index].classList.add('active__content');
+                            counterDisplay.textContent = index + 1;
+
+                            updateNavigationButtons();
+                        }
+
+                        function updateNavigationButtons() {
+                            prevButton.disabled = currentSlideIndex === 0;
+                            nextButton.disabled = currentSlideIndex === totalSlideCount - 1;
+                        }
+
+                        function navigateSlides(direction) {
+                            currentSlideIndex += direction;
+
+                            if (currentSlideIndex < 0) {
+                                currentSlideIndex = 0;
+                            } else if (currentSlideIndex >= totalSlideCount) {
+                                currentSlideIndex = totalSlideCount - 1;
+                            }
+
+                            displaySlide(currentSlideIndex);
+                        }
+
+                        updateNavigationButtons();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="events">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12  col-md-5 ">
+                    <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                        <div class="media-body flex-grow-1"><span class="font-blue text-uppercase">Event
+                                Gallery</span>
+                        </div>
+                        <span
+                            class="w-85percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-12 col-lg-4">
+                    <div class="">
+                        <img src="images/img-small.png" alt="" class="h-400px">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8">
+                    <div class="">
+                        <img src="images/img-big.png" alt="" class="h-400px">
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-12 col-lg-8">
+                    <div class="">
+                        <img src="images/img-big.png" alt="" class="h-400px">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="">
+                        <img src="images/img-small.png" alt="" class="h-400px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="big-section" id="plans">
+        <div class="container">
+            <div class="row justify-content-center align-items-center mb-4">
+                <div class="col-md-12">
+                    <img src="images/floorplan-heading.png" alt="" class="forWeb">
+                    <h4 class="forMobile  alt-font text-extra-dark-gray font-weight-400 text-center">Floor Plans
+                    </h4>
+                </div>
+                <div class="col-12 col-xl-12 col-md-12 wow animate__fadeIn mt-5" data-wow-delay="0.2s"
+                    style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                    <p class="mt-md-4 text-medium line-height-28px Raleway-font text-blue text-center">
+                        Discover the perfect blend of space, style and functionality in our meticulously designed
+                        floor plans, crafted to provide spacious bedrooms with ample natural light, expansive living
+                        areas perfect for relaxation and entertainment, modern kitchens with sleek finishes and
+                        ample storage, luxurious bathrooms with premium fixtures and fittings, and efficient storage
+                        spaces throughout the home
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="floorplan-container">
+            <div class="floorplan-tabs">
+                <button class="floorplan-tab fp-active" data-fp-tab="floor">Floor Plan</button>
+                <button class="floorplan-tab" data-fp-tab="amenities">Internal Amenities</button>
+            </div>
+
+            <div class="floorplan-content">
+                <!-- Floor Plan Content -->
+                <div class="floorplan-tab-content fp-active-content" id="fp-floor-content">
+                    <div class="floorplan-image-wrapper">
+                        <img src="images/floorplans.png" alt="Floor Plan 1" class="floorplan-image">
+
+                    </div>
+
+                    <div class="floorplan-image-wrapper">
+                        <img src="images/floorplans.png" alt="Floor Plan 2" class="floorplan-image">
+
+                    </div>
+                </div>
+
+                <!-- Amenities Content -->
+                <div class="floorplan-tab-content" id="fp-amenities-content">
+                    <div class="floorplan-image-wrapper">
+                        <img src="images/floorplans.png" alt="Amenity 1" class="floorplan-image">
+
+                    </div>
+
+                    <div class="floorplan-image-wrapper">
+                        <img src="images/floorplans.png" alt="Amenity 2" class="floorplan-image">
+
+                    </div>
+                </div>
+
+                <button class="floorplan-enquire-btn">Enquire now</button>
+            </div>
+        </div>
+
+        <div class="floorplan-modal">
+            <div class="floorplan-modal-content">
+                <span class="floorplan-modal-close">&times;</span>
+                <h2>Enquire Now</h2>
+                <form class="floorplan-enquiry-form">
+                    <div class="floorplan-form-group">
+                        <label for="fp-name">Name</label>
+                        <input type="text" id="fp-name" required>
+                    </div>
+                    <div class="floorplan-form-group">
+                        <label for="fp-email">Email</label>
+                        <input type="email" id="fp-email" required>
+                    </div>
+                    <div class="floorplan-form-group">
+                        <label for="fp-phone">Phone</label>
+                        <input type="tel" id="fp-phone" required>
+                    </div>
+                    <div class="floorplan-form-group">
+                        <label for="fp-message">Message</label>
+                        <textarea id="fp-message" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="floorplan-submit-btn">Submit Enquiry</button>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // Tab switching functionality
+            const fpTabs = document.querySelectorAll('.floorplan-tab');
+            const fpTabContents = document.querySelectorAll('.floorplan-tab-content');
+
+            fpTabs.forEach(tab => {
+                tab.addEventListener('click', function () {
+                    // Remove active class from all tabs
+                    fpTabs.forEach(t => t.classList.remove('fp-active'));
+
+                    // Add active class to clicked tab
+                    this.classList.add('fp-active');
+
+                    // Get the tab type
+                    const tabType = this.getAttribute('data-fp-tab');
+
+                    // Hide all tab contents
+                    fpTabContents.forEach(content => {
+                        content.classList.remove('fp-active-content');
+                    });
+
+                    // Show the selected tab content
+                    const activeContent = document.getElementById(`fp-${tabType}-content`);
+                    if (activeContent) {
+                        activeContent.classList.add('fp-active-content');
+                    }
+
+                    console.log('Switched to:', tabType);
+                });
+            });
+
+            // Modal functionality
+            const fpEnquireBtn = document.querySelector('.floorplan-enquire-btn');
+            const fpModal = document.querySelector('.floorplan-modal');
+            const fpModalClose = document.querySelector('.floorplan-modal-close');
+            const fpEnquiryForm = document.querySelector('.floorplan-enquiry-form');
+
+            fpEnquireBtn.addEventListener('click', () => {
+                fpModal.classList.add('fp-show');
+            });
+
+            fpModalClose.addEventListener('click', () => {
+                fpModal.classList.remove('fp-show');
+            });
+
+            fpModal.addEventListener('click', (e) => {
+                if (e.target === fpModal) {
+                    fpModal.classList.remove('fp-show');
+                }
+            });
+
+            fpEnquiryForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const formData = {
+                    name: document.getElementById('fp-name').value,
+                    email: document.getElementById('fp-email').value,
+                    phone: document.getElementById('fp-phone').value,
+                    message: document.getElementById('fp-message').value
+                };
+
+                console.log('Form submitted:', formData);
+                alert('Thank you for your enquiry! We will contact you soon.');
+
+                fpModal.classList.remove('fp-show');
+                fpEnquiryForm.reset();
+            });
+        </script>
+
+    </section>
+
+
+
+
+
+    <section id="projects" class="d-md-block d-lg-block d-sm-none d-none">
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-12  col-md-5 ">
+                    <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
+                        <div class="media-body flex-grow-1"><span class="font-blue text-uppercase">OUR
+                                PROJECTS</span>
+                        </div>
+                        <span
+                            class="w-80percent h-1px bg-blue opacity-7 align-self-center margin-20px-right flex-shrink-0 forWeb"></span>
+                    </div>
+                    <h4
+                        class="w-50percent alt-font text-extra-dark-gray font-weight-400  margin-15px-bottom lg-w-100 sm-margin-25px-bottom">
+                        Milestones</h4>
+                    <p class="text-extra-dark-gray text-medium"> Lorem ipsum dolor sit amet, consectetur adipiscing
+                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+
+
+                    <style>
+                        .quad__slider__container {
+                            max-width: 100%;
+                            width: 100%;
+                            background: white;
+                            border-radius: 20px;
+                            /* padding: 40px; */
+                        }
+
+                        .quad__slider__wrapper {
+                            position: relative;
+                            overflow: hidden;
+                            background: white;
+                        }
+
+                        .quad__slider__track {
+                            display: flex;
+                            transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+                            background-color: #fff;
+                        }
+
+                        .quad__slider__item {
+                            padding: 0px;
+                            flex-shrink: 0;
+                        }
+
+                        .quad__slider__image__wrapper {
+                            position: relative;
+                            overflow: hidden;
+                            border-radius: 0px;
+                            transition: transform 0.3s ease;
+                            /* ensure it can receive focus for accessibility */
+                        }
+
+                        .quad__slider__image {
+                            width: 100%;
+                            max-height: 484px;
+                            object-fit: cover;
+                            display: block;
+                        }
+
+                        /* ----- ADDED: overlay for heading + subheading (only visible on hover) ----- */
+                        .quad__slider__overlay {
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            bottom: 0;
+                            padding: 18px 20px;
+                            box-sizing: border-box;
+                            background: rgba(0, 0, 0, 0.3);
+                            /* semi-opaque bar */
+                            color: #ffffff;
+                            opacity: 0;
+                            transform: translateY(8px);
+                            transition: opacity 0.22s ease, transform 0.22s ease;
+                            pointer-events: none;
+                            /* prevents overlay blocking pointer when hidden */
+                        }
+
+                        .quad__slider__title {
+                            margin: 0 0 6px 0;
+                            font-size: 20px;
+                            font-weight: 600;
+                            line-height: 1.2;
+                        }
+
+                        .quad__slider__subtitle {
+                            margin: 0;
+                            font-size: 0.9rem;
+                            opacity: 0.95;
+                            font-weight: 500;
+                        }
+
+                        /* show overlay on hover OR keyboard focus (accessibility) */
+                        .quad__slider__image__wrapper:hover .quad__slider__overlay,
+                        .quad__slider__image__wrapper:focus-within .quad__slider__overlay {
+                            opacity: 1;
+                            transform: translateY(0);
+                            pointer-events: auto;
+                        }
+
+                        /* small tweak so overlay text remains readable on small screens */
+                        @media (max-width: 576px) {
+                            .quad__slider__overlay {
+                                padding: 14px;
+                            }
+
+                            .quad__slider__title {
+                                font-size: 1rem;
+                            }
+
+                            .quad__slider__subtitle {
+                                font-size: 0.85rem;
+                            }
+                        }
+
+                        /* ----- end added overlay styles ----- */
+
+                        .quad__slider__controls {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 20px;
+                            margin-top: 30px;
+                        }
+
+                        .quad__slider__btn {
+                            background: #BF9A33;
+                            color: white;
+                            border: none;
+                            width: 50px;
+                            height: 50px;
+                            border-radius: 50%;
+                            font-size: 1.5rem;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            /* box-shadow: 0 4px 15px #BF9A33; */
+                            position: absolute;
+                            top: 57%;
+                            right: 0;
+                            border: 6px solid #ffffff;
+                        }
+
+                        .quad__slider__btn:hover {
+                            transform: scale(1.1);
+                            /* box-shadow: 0 6px 20px #BF9A33; */
+                        }
+
+                        .quad__slider__btn:active {
+                            transform: scale(0.95);
+                        }
+
+                        .quad__slider__dots {
+                            display: none;
+                            gap: 10px;
+                        }
+
+                        .quad__slider__dot {
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            background: #ddd;
+                            border: none;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                        }
+
+                        .quad__slider__dot.quad__slider__dot--active {
+                            background: #BF9A33;
+                            width: 30px;
+                            border-radius: 6px;
+                        }
+
+                        .quad__slider__counter {
+                            font-size: 1rem;
+                            color: #666;
+                            font-weight: 600;
+                            display: none;
+                        }
+
+                        @media (max-width: 968px) {
+                            .quad__slider__item {
+                                min-width: 50%;
+                            }
+                        }
+
+                        @media (max-width: 576px) {
+                            .quad__slider__item {
+                                min-width: 100%;
+                            }
+                        }
+                    </style>
+
+                    <div class="quad__slider__container">
+                        <div class="quad__slider__wrapper">
+                            <div class="quad__slider__track" id="quadSliderTrack">
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project1.png" alt="Mountain Landscape"
+                                            class="quad__slider__image">
+                                        <!-- OVERLAY (appears on hover/focus) -->
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project2.png" alt="Beach Paradise" class="quad__slider__image">
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project3.png" alt="Desert Sunset" class="quad__slider__image">
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project4.png" alt="Forest Trail" class="quad__slider__image">
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project1.png" alt="Alpine View" class="quad__slider__image">
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="quad__slider__item">
+                                    <div class="quad__slider__image__wrapper" tabindex="0">
+                                        <img src="images/project2.png" alt="Tropical Island"
+                                            class="quad__slider__image">
+                                        <div class="quad__slider__overlay" aria-hidden="false">
+                                            <h5 class="quad__slider__title">The SK residency</h5>
+                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
+                                                consectetur
+                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
+                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
+                                                impedit quo omnis deleniti beatae asperiores?
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="quad__slider__controls">
+                            <button class="quad__slider__btn" id="quadSliderPrev" aria-label="Previous">‹</button>
+                            <div class="quad__slider__dots" id="quadSliderDots"></div>
+                            <span class="quad__slider__counter" id="quadSliderCounter">1 / 1</span>
+                            <button class="quad__slider__btn" id="quadSliderNext" aria-label="Next">›</button>
+                        </div>
+                    </div>
+
+                    <script>
+                        class QuadImageSlider {
+                            constructor(options) {
+                                this.track = document.getElementById(options.trackId);
+                                this.prevBtn = document.getElementById(options.prevBtnId);
+                                this.nextBtn = document.getElementById(options.nextBtnId);
+                                this.dotsContainer = document.getElementById(options.dotsId);
+                                this.counter = document.getElementById(options.counterId);
+
+                                this.items = this.track.querySelectorAll('.quad__slider__item');
+                                this.totalItems = this.items.length;
+                                this.itemsPerView = 4;
+                                this.currentIndex = 0;
+                                this.maxIndex = Math.max(0, this.totalItems - this.itemsPerView);
+
+                                this.init();
+                            }
+
+                            init() {
+                                this.setItemWidths();
+                                this.createDots();
+                                this.updateSlider();
+                                this.attachEvents();
+                                this.handleResize();
+                            }
+
+                            setItemWidths() {
+                                const itemWidth = 100 / this.itemsPerView;
+                                this.items.forEach(item => {
+                                    item.style.minWidth = `${itemWidth}%`;
+                                });
+                            }
+
+                            createDots() {
+                                this.dotsContainer.innerHTML = '';
+                                const totalDots = this.maxIndex + 1;
+
+                                for (let i = 0; i <= this.maxIndex; i++) {
+                                    const dot = document.createElement('button');
+                                    dot.className = 'quad__slider__dot';
+                                    dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+                                    dot.addEventListener('click', () => this.goToSlide(i));
+                                    this.dotsContainer.appendChild(dot);
+                                }
+                            }
+
+                            updateSlider() {
+                                const offset = -(this.currentIndex * (100 / this.itemsPerView));
+                                this.track.style.transform = `translateX(${offset}%)`;
+
+                                this.updateDots();
+                                this.updateCounter();
+                            }
+
+                            updateDots() {
+                                const dots = this.dotsContainer.querySelectorAll('.quad__slider__dot');
+                                dots.forEach((dot, idx) => {
+                                    if (idx === this.currentIndex) {
+                                        dot.classList.add('quad__slider__dot--active');
+                                    } else {
+                                        dot.classList.remove('quad__slider__dot--active');
+                                    }
+                                });
+                            }
+
+                            updateCounter() {
+                                this.counter.textContent = `${this.currentIndex + 1} / ${this.maxIndex + 1}`;
+                            }
+
+                            goToSlide(index) {
+                                this.currentIndex = Math.max(0, Math.min(index, this.maxIndex));
+                                this.updateSlider();
+                            }
+
+                            nextSlide() {
+                                if (this.currentIndex < this.maxIndex) {
+                                    this.currentIndex++;
+                                } else {
+                                    // Loop back to the beginning
+                                    this.currentIndex = 0;
+                                }
+                                this.updateSlider();
+                            }
+
+                            prevSlide() {
+                                if (this.currentIndex > 0) {
+                                    this.currentIndex--;
+                                } else {
+                                    // Loop to the end
+                                    this.currentIndex = this.maxIndex;
+                                }
+                                this.updateSlider();
+                            }
+
+                            attachEvents() {
+                                this.nextBtn.addEventListener('click', () => this.nextSlide());
+                                this.prevBtn.addEventListener('click', () => this.prevSlide());
+
+                                let touchStartX = 0;
+                                let touchEndX = 0;
+
+                                this.track.addEventListener('touchstart', (e) => {
+                                    touchStartX = e.changedTouches[0].screenX;
+                                });
+
+                                this.track.addEventListener('touchend', (e) => {
+                                    touchEndX = e.changedTouches[0].screenX;
+                                    this.handleSwipe(touchStartX, touchEndX);
+                                });
+                            }
+
+                            handleSwipe(startX, endX) {
+                                const swipeThreshold = 50;
+                                const diff = startX - endX;
+
+                                if (Math.abs(diff) > swipeThreshold) {
+                                    if (diff > 0) {
+                                        this.nextSlide();
+                                    } else {
+                                        this.prevSlide();
+                                    }
+                                }
+                            }
+
+                            handleResize() {
+                                window.addEventListener('resize', () => {
+                                    const width = window.innerWidth;
+
+                                    if (width <= 576) {
+                                        this.itemsPerView = 1;
+                                    } else if (width <= 968) {
+                                        this.itemsPerView = 2;
+                                    } else {
+                                        this.itemsPerView = 4;
+                                    }
+
+                                    this.maxIndex = Math.max(0, this.totalItems - this.itemsPerView);
+                                    this.currentIndex = Math.min(this.currentIndex, this.maxIndex);
+                                    this.setItemWidths();
+                                    this.createDots();
+                                    this.updateSlider();
+                                });
+                            }
+                        }
+
+                        const quadSlider = new QuadImageSlider({
+                            trackId: 'quadSliderTrack',
+                            prevBtnId: 'quadSliderPrev',
+                            nextBtnId: 'quadSliderNext',
+                            dotsId: 'quadSliderDots',
+                            counterId: 'quadSliderCounter'
+                        });
+                    </script>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <style>
+        .floorplan-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+
+            border-radius: 8px;
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e6e3 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .floorplan-tabs {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .floorplan-tab {
+            padding: 12px 20px;
+            font-size: 16px;
+            color: #999;
+            cursor: pointer;
+            border: none;
+            background: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .floorplan-tab.fp-active {
+            color: #d4a574;
+            font-weight: 500;
+        }
+
+        .floorplan-tab.fp-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #d4a574;
+        }
+
+        .floorplan-tab:hover {
+            color: #d4a574;
+        }
+
+        .floorplan-content {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 400px;
+        }
+
+        .floorplan-tab-content {
+            display: none;
+            width: 100%;
+        }
+
+        .floorplan-tab-content.fp-active-content {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: fpFadeIn 0.4s ease;
+        }
+
+        @keyframes fpFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .floorplan-image-wrapper {
+            flex: 1;
+            min-width: 280px;
+            max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .floorplan-image {
+            width: 100%;
+            height: auto;
+            opacity: 0.85;
+            filter: contrast(1.1);
+        }
+
+        .floorplan-label {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(212, 165, 116, 0.9);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .floorplan-enquire-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #000;
+            color: #fff;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .floorplan-enquire-btn:hover {
+            background: #333;
+            transform: translate(-50%, -50%) scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .floorplan-enquire-btn:active {
+            transform: translate(-50%, -50%) scale(0.98);
+        }
+
+        .floorplan-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floorplan-modal.fp-show {
+            display: flex;
+        }
+
+        .floorplan-modal-content {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            animation: fpSlideIn 0.3s ease;
+        }
+
+        @keyframes fpSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .floorplan-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #999;
+            transition: color 0.3s ease;
+        }
+
+        .floorplan-modal-close:hover {
+            color: #333;
+        }
+
+        .floorplan-modal h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .floorplan-form-group {
+            margin-bottom: 20px;
+        }
+
+        .floorplan-form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .floorplan-form-group input,
+        .floorplan-form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .floorplan-form-group input:focus,
+        .floorplan-form-group textarea:focus {
+            outline: none;
+            border-color: #7c4dff;
+        }
+
+        .floorplan-submit-btn {
+            background: #7c4dff;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .floorplan-submit-btn:hover {
+            background: #6a3de8;
+        }
+
+        @media (max-width: 768px) {
+            .floorplan-container {
+                padding: 20px;
+            }
+
+            .floorplan-tab-content.fp-active-content {
+                gap: 20px;
+            }
+
+            .floorplan-enquire-btn {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+
+
+
+
+
+
+    <section id="gallery" class="gallery d-none" style="overflow-x: hidden;">
+        <h4 class="font-blue text-uppercase text-center">GALLERY</h4>
+        <div class="gallery-ellipse top"></div>
+        <div class="gallery-slider">
+            <div class="gallery-track" style="animation-play-state: running;">
+
+
+                <img src="images/gallery-1.png" alt="Gallery Image 1" class="gallery-image">
+                <img src="images/gallery-2.png" alt="Gallery Image 2" class="gallery-image">
+                <img src="images/gallery-3.png" alt="Gallery Image 3" class="gallery-image">
+                <img src="images/gallery-4.png" alt="Gallery Image 4" class="gallery-image">
+                <img src="images/gallery-5.png" alt="Gallery Image 5" class="gallery-image" style="opacity: 1;">
+                <img src="images/gallery-1.png" alt="Gallery Image 1" class="gallery-image">
+                <img src="images/gallery-2.png" alt="Gallery Image 2" class="gallery-image">
+                <img src="images/gallery-3.png" alt="Gallery Image 3" class="gallery-image">
+                <img src="images/gallery-4.png" alt="Gallery Image 4" class="gallery-image">
+                <img src="images/gallery-5.png" alt="Gallery Image 5" class="gallery-image" style="opacity: 1;">
+
+
+
+
+            </div>
+        </div>
+        <div class="gallery-ellipse bottom"></div>
+    </section>
+
+
+    <section class="big-section bg-white" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 md-margin-15px-bottom p-0 m-0">
+                    <div
+                        class="h-450 bg-black padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-small">
+                        <div class="alt-font text-extra-medium font-weight-500  letter-spacing-2px d-flex">
+                            <span class="w-40px h-1px bg-white align-self-center margin-25px-right"></span><span
+                                class="Raleway-font font-weight-800 text-white">Contact us</span>
+                        </div>
+                        <h4 class="text-white alt-font font-weight-200  mb-0 Raleway-font">Get in touch with us
+                            for any questions & help
+                        </h4>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 md-margin-15px-bottom p-0 m-0">
+                    <div class="h-450 padding-40px-all sm-padding-30px-all last-paragraph-no-margin box-shadow-small"
+                        style="background-image: url(images/contact-bg.png); background-size:cover;background-repeat:no-repeat">
+
+                    </div>
+                </div>
+            </div>
+            <div class="forWeb mt-255 border-radius-20px margin-75px-right margin-75px-left z-index-6 position-relative overlap-section-three-fourth bg-white box-shadow-large padding-3-rem-all md-padding-3-rem-all xs-padding-3-rem-tb xs-padding-2-rem-lr wow animate__fadeIn"
+                data-wow-delay="0.4s">
+                <div class="row justify-content-left">
+                    <div class="col-xl-12 col-lg-12 text-center margin-1-half-rem-bottom md-margin-1-rem-bottom">
+
+                        <div class="alt-font text-extra-medium font-weight-500  letter-spacing-2px d-flex">
+                            <span class="w-40px h-1px bg-black align-self-center margin-25px-right"></span><span
+                                class="Raleway-font font-weight-500 text-black">
+                                <h5 class="text-left text-black alt-font font-weight-700  mb-0 Raleway-font">
+                                    Schedule a Call
+                                </h5>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <!-- start contact form -->
+                        <form action="#" method="post" novalidate="">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 ">
+                                    <input class="medium-input bg-white  required" type="text" name="name"
+                                        placeholder="Name">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6 ">
+                                    <input class="medium-input bg-white" type="tel" name="phone"
+                                        placeholder="Phone Number">
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 ">
+                                    <input class="medium-input bg-white  required" type="email" name="email"
+                                        placeholder="Email Id">
+                                </div>
+
+                                <div class="col-12 col-md-12 col-lg-12 ">
+                                    <textarea class="medium-textarea bg-white h-120px" rows="6" name="comment"
+                                        placeholder="Message"></textarea>
+                                </div>
+                                <div
+                                    class="col-12  col-md-12 col-lg-12 text-center text-md-end d-flex justify-content-end">
+                                    <button id="project-contact-us-button"
+                                        class="btn  btn-large btn-transparent-dark-gray btn-slide-left-bg d-table d-lg-inline-block lg-margin-15px-bottom md-margin-auto-lr submit"
+                                        type="submit">Submit</button>
+                                </div>
+                            </div>
+                            <div class="form-results d-none"></div>
+                        </form>
+                        <!-- end contact form -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="forMobile mt-255 border-radius-20px  z-index-6 position-relative overlap-section-three-fourth bg-white box-shadow-large padding-3-rem-all md-padding-3-rem-all xs-padding-3-rem-tb xs-padding-2-rem-lr wow animate__fadeIn"
+                data-wow-delay="0.4s">
+                <div class="row justify-content-left">
+                    <div class="col-xl-12 col-lg-12 text-center margin-1-half-rem-bottom md-margin-1-rem-bottom">
+
+                        <div class="alt-font text-extra-medium font-weight-500  letter-spacing-2px d-flex">
+                            <span class="w-40px h-1px bg-black align-self-center margin-25px-right"></span><span
+                                class="Raleway-font font-weight-500 text-black">
+                                <h5 class="text-left text-black alt-font font-weight-700  mb-0 Raleway-font">
+                                    Schedule a Call
+                                </h5>
+                            </span>
+
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <!-- start contact form -->
+                        <form action="#" method="post" novalidate="">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6 ">
+                                    <input class="medium-input bg-white  required" type="text" name="name"
+                                        placeholder="Name">
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-6 ">
+                                    <input class="medium-input bg-white" type="tel" name="phone"
+                                        placeholder="Phone Number">
+                                </div>
+                                <div class="col-12 col-md-12 col-lg-12 ">
+                                    <input class="medium-input bg-white  required" type="email" name="email"
+                                        placeholder="Email Id">
+                                </div>
+
+                                <div class="col-12 col-md-12 col-lg-12 ">
+                                    <textarea class="medium-textarea bg-white h-120px" rows="6" name="comment"
+                                        placeholder="Message"></textarea>
+                                </div>
+                                <div
+                                    class="col-12  col-md-12 col-lg-12 text-center text-md-end d-flex justify-content-end">
+                                    <button id="project-contact-us-button"
+                                        class="btn  btn-large btn-transparent-dark-gray btn-slide-left-bg d-table d-lg-inline-block lg-margin-15px-bottom md-margin-auto-lr submit"
+                                        type="submit">Submit</button>
+                                </div>
+                            </div>
+                            <div class="form-results d-none"></div>
+                        </form>
+                        <!-- end contact form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+    <!-- end section -->
+    <!-- start footer -->
+    <footer class="bg-light-gray">
+        <div class="footer-top padding-three-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <img src=" images/logo.png" alt="">
+                    </div>
+
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <p class="text-gray mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12 text-center">
+                        <img src="images/divider.png" alt="">
+                    </div>
+
+
+
+                </div>
+                <div class="container">
+
+
+                    <div class="row mt-4 forWeb">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <img src="images/email-footer.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <img src="images/address-footer.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-end">
+                            <img src="images/call-footer.png" alt="" data-no-retina="">
+                        </div>
+                    </div>
+
+                    <div class="row mt-4 forMobile">
+                        <div class="col-12 col-md-4 col-lg-4">
+                            <img src="images/email-footer.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4 mt-3">
+                            <img src="images/address-footer.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4 mt-3">
+                            <img src="images/call-footer.png" alt="" data-no-retina="">
+                        </div>
+                    </div>
+
+                    <div class="row mt-md-5  d-flex justify-content-center align-items-center">
+                        <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mt-5">
+                            <img src="images/insta.png" alt="" data-no-retina="">
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mt-5">
+                            <img src="images/fb.png" alt="" data-no-retina="">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom padding-three-bottom padding-seven-top xs-no-padding-top">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-md-1 justify-content-center">
+                    <div class="col order-2 order-md-0  text-center">
+                        <p class="mt-5">Designed and Developed by U&I CREATIVE AGENCY, SKKISHAN BUILDCON. All Rights
+                            Reserved</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- start scroll to top -->
+    <a class="scroll-top-arrow" href="javascript:void(0);"><img src="images/up.png" alt=""></a>
+
+
+    <!-- end scroll to top -->
+    <!-- javascript -->
+
+
+
+
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+
+        cards.forEach((card) => {
+            card.addEventListener('click', () => {
+                if (card.hasAttribute('active')) {
+                    card.removeAttribute('active'); // close same card
+                } else {
+                    cards.forEach((c) => c.removeAttribute('active')); // close others
+                    card.setAttribute('active', ''); // open clicked
+                }
+            });
+        });
+    </script>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/theme-vendors.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
