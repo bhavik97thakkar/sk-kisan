@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
     <meta name="description" content="">
     <!-- favicon icon -->
-    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="shortcut icon" href="images/skkishan favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
@@ -1875,29 +1875,14 @@
                 </div>
             </div>
             <div class="row mt-5">
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-12">
                     <div class="">
-                        <img src="images/event-1.webp" alt="">
+                        <img src="images/gallery-main.jpg" alt="">
                     </div>
                 </div>
-                <div class="col-12 col-lg-8 mt-3 mt-md-0">
-                    <div class="">
-                        <img src="images/event-2.webp" alt="">
-                    </div>
-                </div>
+
             </div>
-            <div class="row mt-2">
-                <div class="col-12 col-lg-8 mt-3 mt-md-0">
-                    <div class="">
-                        <img src="images/event-3.webp" alt="">
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 mt-3 mt-md-0">
-                    <div class="">
-                        <img src="images/event-4.webp" alt="">
-                    </div>
-                </div>
-            </div>
+
         </div>
     </section>
 
@@ -1942,46 +1927,21 @@
 
                 <!-- Amenities Content -->
                 <div class="floorplan-tab-content" id="fp-amenities-content">
-                    <div class="floorplan-image-wrapper">
-                        <img src="images/floorplans.png" alt="Amenity 1" class="floorplan-image">
+                    <div class="amenities-image-wrapper">
+                        <img src="images/internal-amenities.png" alt="Amenity 1" class="floorplan-image">
 
                     </div>
 
-                    <div class="floorplan-image-wrapper">
-                        <img src="images/floorplans.png" alt="Amenity 2" class="floorplan-image">
 
-                    </div>
                 </div>
 
-                <button class="floorplan-enquire-btn">Enquire now</button>
+                <a href="#contact">
+                    <button class="floorplan-enquire-btn">Enquire now</button>
+                </a>
             </div>
         </div>
 
-        <div class="floorplan-modal">
-            <div class="floorplan-modal-content">
-                <span class="floorplan-modal-close">&times;</span>
-                <h2>Enquire Now</h2>
-                <form class="floorplan-enquiry-form">
-                    <div class="floorplan-form-group">
-                        <label for="fp-name">Name</label>
-                        <input type="text" id="fp-name" required>
-                    </div>
-                    <div class="floorplan-form-group">
-                        <label for="fp-email">Email</label>
-                        <input type="email" id="fp-email" required>
-                    </div>
-                    <div class="floorplan-form-group">
-                        <label for="fp-phone">Phone</label>
-                        <input type="tel" id="fp-phone" required>
-                    </div>
-                    <div class="floorplan-form-group">
-                        <label for="fp-message">Message</label>
-                        <textarea id="fp-message" rows="4"></textarea>
-                    </div>
-                    <button type="submit" class="floorplan-submit-btn">Submit Enquiry</button>
-                </form>
-            </div>
-        </div>
+
 
         <script>
             // Tab switching functionality
@@ -2014,42 +1974,7 @@
                 });
             });
 
-            // Modal functionality
-            const fpEnquireBtn = document.querySelector('.floorplan-enquire-btn');
-            const fpModal = document.querySelector('.floorplan-modal');
-            const fpModalClose = document.querySelector('.floorplan-modal-close');
-            const fpEnquiryForm = document.querySelector('.floorplan-enquiry-form');
 
-            fpEnquireBtn.addEventListener('click', () => {
-                fpModal.classList.add('fp-show');
-            });
-
-            fpModalClose.addEventListener('click', () => {
-                fpModal.classList.remove('fp-show');
-            });
-
-            fpModal.addEventListener('click', (e) => {
-                if (e.target === fpModal) {
-                    fpModal.classList.remove('fp-show');
-                }
-            });
-
-            fpEnquiryForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                const formData = {
-                    name: document.getElementById('fp-name').value,
-                    email: document.getElementById('fp-email').value,
-                    phone: document.getElementById('fp-phone').value,
-                    message: document.getElementById('fp-message').value
-                };
-
-                console.log('Form submitted:', formData);
-                alert('Thank you for your enquiry! We will contact you soon.');
-
-                fpModal.classList.remove('fp-show');
-                fpEnquiryForm.reset();
-            });
         </script>
 
     </section>
@@ -2315,7 +2240,7 @@
                             </div>
                         </div>
 
-                        <div class="quad__slider__controls">
+                        <div class="quad__slider__controls" style="display: none;">
                             <button class="quad__slider__btn" id="quadSliderPrev" aria-label="Previous">‹</button>
                             <div class="quad__slider__dots" id="quadSliderDots"></div>
                             <span class="quad__slider__counter" id="quadSliderCounter">1 / 1</span>
@@ -2575,6 +2500,17 @@
             flex: 1;
             min-width: 280px;
             max-width: 400px;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .amenities-image-wrapper {
+            flex: 1;
+            /* min-width: 280px;
+            max-width: 400px; */
             background: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -2969,7 +2905,11 @@
 
                     <div class="row mt-md-5  d-flex justify-content-center align-items-center">
                         <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mt-5">
-                            <img src="images/insta.png" alt="" data-no-retina="">
+                            <a
+                                href="https://www.instagram.com/itsskkishanbuildcon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw== ">
+
+                                <img src="images/insta.png" alt="" data-no-retina="">
+                            </a>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-center align-items-center mt-5">
                             <img src="images/fb.png" alt="" data-no-retina="">
