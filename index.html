@@ -874,49 +874,76 @@
         </div>
     </div>
     <style>
-        .big-section {
+        .big-section.hero-video {
             position: relative;
+            width: 100%;
             height: 100vh;
+            /* full viewport height */
             overflow: hidden;
         }
 
+        /* VIDEO WRAPPER */
         .bg-video-wrapper {
             position: absolute;
-            inset: 0;
-            z-index: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            z-index: 0;
         }
 
+        /* VIMEO IFRAME */
         .bg-video {
             position: absolute;
             top: 50%;
             left: 50%;
-            width: 177.78vh;
-            height: 100vh;
+            width: 100vw;
+            /* ensures full browser width */
+            height: 56.25vw;
+            /* 16:9 ratio (width × 9/16) */
+            min-height: 100vh;
+            /* keep it tall enough on tall screens */
+            min-width: 177.78vh;
+            /* keep it wide enough on wide screens */
             transform: translate(-50%, -50%);
             pointer-events: none;
+            /* make video non-clickable */
         }
 
+        /* DARK OVERLAY */
         .opacity-full {
             position: absolute;
-            inset: 0;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(0, 0, 0, 0.35);
             z-index: 1;
         }
 
+        /* CONTENT ON TOP */
         .content-on-video {
             position: relative;
             z-index: 2;
+            color: #fff;
+            text-align: center;
+            top: 45%;
+            transform: translateY(-45%);
         }
     </style>
-    <section class="big-section position-relative wow animate__fadeIn">
+    <section class="big-section hero-video position-relative wow animate__fadeIn">
         <div class="opacity-full"></div>
 
         <div class="bg-video-wrapper">
-            <iframe class="bg-video"
+            <!-- <iframe class="bg-video"
                 src="https://www.youtube.com/embed/vNoc-LhGCTc?autoplay=1&mute=1&loop=1&playlist=vNoc-LhGCTc&controls=0&rel=0&modestbranding=1"
                 title="BAPS evening new arti" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe> -->
+            <iframe class="bg-video"
+                src="https://player.vimeo.com/video/1136437994?autoplay=1&muted=1&loop=1&background=1" frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>
             </iframe>
         </div>
     </section>
@@ -1853,19 +1880,19 @@
                         <img src="images/event-1.webp" alt="">
                     </div>
                 </div>
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 mt-3 mt-md-0">
                     <div class="">
                         <img src="images/event-2.webp" alt="">
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
-                <div class="col-12 col-lg-8">
+                <div class="col-12 col-lg-8 mt-3 mt-md-0">
                     <div class="">
                         <img src="images/event-3.webp" alt="">
                     </div>
                 </div>
-                <div class="col-12 col-lg-4">
+                <div class="col-12 col-lg-4 mt-3 mt-md-0">
                     <div class="">
                         <img src="images/event-4.webp" alt="">
                     </div>
@@ -2879,13 +2906,6 @@
 
 
 
-
-
-
-
-
-
-
     <!-- end section -->
     <!-- start footer -->
     <footer class="bg-light-gray">
@@ -2915,25 +2935,35 @@
 
                     <div class="forWeb row mt-4   d-md-flex justify-content-center align-items-center">
                         <div class="col-12 col-md-4 col-lg-4">
-                            <img src="images/email-footer.png" alt="" data-no-retina="">
+                            <a href="mailto:skkishan@gmail.com">
+                                <img src="images/email-footer.png" alt="" data-no-retina="">
+                            </a>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4">
                             <img src="images/address-footer.png" alt="" data-no-retina="">
                         </div>
                         <div class="col-12 col-md-4 col-lg-4 d-flex justify-content-end">
-                            <img src="images/call-footer.png" alt="" data-no-retina="">
+                            <a href="tel:+9196543267890">
+
+                                <img src="images/call-footer.png" alt="" data-no-retina="">
+                            </a>
                         </div>
                     </div>
 
                     <div class="row mt-4 forMobile">
                         <div class="col-12 col-md-4 col-lg-4">
-                            <img src="images/email-footer.png" alt="" data-no-retina="">
+                            <a href="mailto:skkishan@gmail.com">
+                                <img src="images/email-footer.png" alt="" data-no-retina="">
+                            </a>
                         </div>
                         <div class="col-12 col-md-4 col-lg-4 mt-3">
                             <img src="images/address-footer.png" alt="" data-no-retina="">
                         </div>
                         <div class="col-12 col-md-4 col-lg-4 mt-3">
-                            <img src="images/call-footer.png" alt="" data-no-retina="">
+                            <a href="tel:+9196543267890">
+                                <img src="images/call-footer.png" alt="" data-no-retina="">
+                            </a>
+
                         </div>
                     </div>
 
@@ -2953,7 +2983,8 @@
             <div class="container">
                 <div class="row row-cols-1 row-cols-md-1 justify-content-center">
                     <div class="col order-2 order-md-0  text-center">
-                        <p class="mt-5">Designed and Developed by U&I CREATIVE AGENCY, SKKISHAN BUILDCON. All Rights
+                        <p class="mt-5">Designed and Developed by <a href="https://uicreativeagency.com/">U&I CREATIVE
+                                AGENCY</a>, SKKISHAN BUILDCON. All Rights
                             Reserved</p>
                     </div>
 
