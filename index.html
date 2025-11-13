@@ -820,14 +820,38 @@
 
     <!-- end header -->
     <!-- start section -->
-    <div id="home">
+    <div id="home" class="d-none">
+        <style>
+            .swiper-slide.cover-background {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .background-video {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: 0;
+            }
+        </style>
         <div class="container-fluid position-relative">
             <div class="row">
                 <div class="swiper-container white-move full-screen md-h-650px sm-h-500px"
                     data-slider-options='{ "slidesPerView": 1, "loop": false, "autoplay": { "delay": 4500, "disableOnInteraction": false },  "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next-nav", "prevEl": ".swiper-button-previous-nav" }, "keyboard": { "enabled": true, "onlyInViewport": true }, "effect": "slide" }'>
                     <div class="swiper-wrapper">
                         <!-- start slider item -->
-                        <div class="swiper-slide cover-background" style="background-image:url('images/banner.png');">
+                        <!-- <div class="swiper-slide cover-background" style="background-image:url('images/banner.png');"> -->
+                        <div class="swiper-slide cover-background">
+                            <video autoplay muted loop playsinline class="background-video">
+                                <source
+                                    src="https://drive.google.com/file/d/1oojucnbl5lzukbSz4v-3bOIiewAw65jY/view?usp=sharing"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+
                             <div class="container h-100">
                                 <div class="row justify-content-center h-100">
                                     <div
@@ -849,6 +873,54 @@
             </div>
         </div>
     </div>
+    <style>
+        .big-section {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .bg-video-wrapper {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 177.78vh;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .opacity-full {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.35);
+            z-index: 1;
+        }
+
+        .content-on-video {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+    <section class="big-section position-relative wow animate__fadeIn">
+        <div class="opacity-full"></div>
+
+        <div class="bg-video-wrapper">
+            <iframe class="bg-video"
+                src="https://www.youtube.com/embed/vNoc-LhGCTc?autoplay=1&mute=1&loop=1&playlist=vNoc-LhGCTc&controls=0&rel=0&modestbranding=1"
+                title="BAPS evening new arti" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"
+                allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
     <section id="about">
         <div class="container">
             <div class="row align-items-center justify-content-center">
@@ -893,9 +965,10 @@
                 <div class="row align-items-start mx-2">
                     <div class="col-lg-5  col-md-5 ">
                         <div class="alt-font text-large font-weight-500 margin-30px-bottom d-flex">
-                            <p class="text-extra-dark-gray text-medium">Explore the range of exceptional design
-                                solutions we
-                                offer, tailored to suit your residential, commercial, restaurant, and public spaces.
+                            <p class="text-extra-dark-gray text-medium">Our growing community of happy homeowners
+                                reflects the trust we’ve built through quality and commitment. Every relationship we
+                                create is based on transparency, reliability, and long-term value. We’re proud to be a
+                                name people believe in and a brand they choose with confidence.
                             </p>
 
                         </div>
@@ -958,16 +1031,17 @@
                 </div>
                 <div class="col-12 col-xl-6 col-md-6 wow animate__fadeIn" data-wow-delay="0.2s"
                     style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
-                    <p class="text-medium line-height-28px Raleway-font text-blue">We have built relationship through
-                        its structures. This relationships are based on trust and dependability. The company has
-                        achieved reputation by providing Quality Construction, Good Service and Timely Delivery.
+                    <p class="text-medium line-height-28px Raleway-font text-blue">Our growing community of happy
+                        homeowners reflects the trust we’ve built through quality and commitment. Every relationship we
+                        create is based on transparency, reliability, and long-term value. We’re proud to be a name
+                        people believe in and a brand they choose with confidence.
                     </p>
                     <!-- <a href="our-services.html" class="btn btn-link btn-extra-large text-extra-dark-gray">Explore
                                 services</a> -->
                 </div>
             </div>
             <img src="images/client-bg.png" alt="" class="w-100 mt-4">
-            <div class="row mt-4">
+            <!-- <div class="row mt-4">
                 <div class="col-12 col-md-4">
                     <img src="images/total-sqft.png" alt="">
                 </div>
@@ -977,7 +1051,7 @@
                 <div class="col-12 col-md-4 mt-5 mt-md-0">
                     <img src="images/yr-trust.png" alt="">
                 </div>
-            </div>
+            </div> -->
         </div>
 
     </div>
@@ -995,11 +1069,11 @@
                     <h4
                         class="w-50percent alt-font text-extra-dark-gray font-weight-400  margin-15px-bottom lg-w-100 sm-margin-25px-bottom">
                         Enjoy Life In Every Step</h4>
-                    <p class="text-extra-dark-gray text-medium"> With the ever increasing need for space and a zeal to
-                        own the best, we know modern home owners yearn for. So to hold true to our word of improved
-                        lifestyles and enhanced living that boast a smooth way of life, and making it picture perfect
-                        are the finest amenities and facilities, seamlessly integrated throughout the project to
-                        compliment the lifestyle.
+                    <p class="text-extra-dark-gray text-medium"> The escalating need for space and the pursuit of
+                        excellence define the modern homeowner. This project is purpose-built to meet those aspirations.
+                        We present an enhanced living environment structured for a smooth and sophisticated way of life.
+                        Discover the finest amenities and facilities, seamlessly integrated throughout, designed purely
+                        to complement a premium lifestyle.
                     </p>
                 </div>
             </div>
@@ -1210,20 +1284,18 @@
                 <div class="property-slider-wrapper">
                     <div class="property-slides-track" id="slidesTrack">
                         <div class="property-slide-item" data-index="0">
-                            <img src="images/slider.png" alt="Modern apartment courtyard">
+                            <img src="images/AMENITIES-1.webp" alt="Modern apartment courtyard">
                         </div>
                         <div class="property-slide-item" data-index="1">
-                            <img src="images/slider.png" alt="Luxury building exterior">
+                            <img src="images/AMENITIES-2.webp" alt="Luxury building exterior">
                         </div>
                         <div class="property-slide-item" data-index="2">
-                            <img src="images/slider.png" alt="Contemporary home interior">
+                            <img src="images/AMENITIES-3.webp" alt="Contemporary home interior">
                         </div>
                         <div class="property-slide-item" data-index="3">
-                            <img src="images/slider.png" alt="Beautiful living space">
+                            <img src="images/AMENITIES-4.webp" alt="Beautiful living space">
                         </div>
-                        <div class="property-slide-item" data-index="4">
-                            <img src="images/slider.png" alt="Modern architecture">
-                        </div>
+
                     </div>
 
                     <button class="property-nav-btn property-nav-prev d-none" aria-label="Previous slide">‹</button>
@@ -1511,7 +1583,8 @@
                         flex: 1;
                         position: relative;
                         overflow: hidden;
-                        background: #f0f0f0;
+                        background: #fff;
+                        padding: 20px;
                     }
 
                     .gallery__image {
@@ -1519,6 +1592,7 @@
                         height: 100%;
                         object-fit: cover;
                         display: none;
+                        border-radius: 20px;
                     }
 
                     .gallery__image.active__slide {
@@ -1531,7 +1605,7 @@
                         display: flex;
                         flex-direction: column;
                         justify-content: space-between;
-                        background: #fafafa;
+                        background: #fff;
                     }
 
                     .gallery__text-content {
@@ -1642,55 +1716,56 @@
                     <div class="gallery__wrapper">
                         <div class="gallery__container">
                             <div class="gallery__image-section">
-                                <img src="images/lawn.png" alt="Lawn Area" class="gallery__image active__slide">
-                                <img src="images/lawn.png" alt="Apartment Building" class="gallery__image">
-                                <img src="images/lawn.png" alt="Swimming Pool" class="gallery__image">
-                                <img src="images/lawn.png" alt="Gym Area" class="gallery__image">
+                                <img src="images/entrance.webp" alt="Entrance Area"
+                                    class="gallery__image active__slide">
+                                <img src="images/lawn.webp" alt="Lawn Area" class="gallery__image">
+                                <img src="images/play area.webp" alt="Play Area" class="gallery__image">
+                                <img src="images/temple.webp" alt="Temple Area" class="gallery__image">
                             </div>
 
                             <div class="gallery__content-section">
                                 <div>
                                     <div class="gallery__text-content active__content">
 
+                                        <h2 class="gallery__heading">Entrance Area</h2>
+                                        <p class="gallery__description">
+                                            Step into a grand welcome that sets the tone for everything that follows.
+                                            Our thoughtfully designed entrance blends elegance with security, offering a
+                                            perfect first impression of prestige and peace. From refined architecture to
+                                            lush green surroundings, every detail reflects sophistication.It’s not just
+                                            an entryway it’s the beginning of your journey home.
+                                        </p>
+                                    </div>
+
+                                    <div class="gallery__text-content">
+
                                         <h2 class="gallery__heading">Lawn Area</h2>
                                         <p class="gallery__description">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                                            tempor
-                                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                                            nostrud
-                                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                            Breathe in serenity as you walk through our beautifully landscaped lawn
+                                            area. A perfect blend of nature and design, it’s where families gather,
+                                            mornings begin, and evenings unwind. Every corner is crafted to bring
+                                            calmness and joy to everyday living. Here, greenery isn’t just seen it’s
+                                            felt.
                                         </p>
                                     </div>
 
                                     <div class="gallery__text-content">
-
-                                        <h2 class="gallery__heading">Apartment Building</h2>
+                                        <h2 class="gallery__heading">Play Area</h2>
                                         <p class="gallery__description">
-                                            Experience modern living at its finest with our contemporary apartment
-                                            buildings.
-                                            Featuring spacious layouts, premium finishes, and stunning city views that
-                                            redefine
-                                            urban lifestyle.
+                                            A space where laughter echoes and memories grow.Our dedicated play area is
+                                            designed with safety, fun, and imagination in mind. From vibrant zones to
+                                            open surroundings, it’s a world where children explore freely.Because every
+                                            childhood deserves a playground that inspires joy.
                                         </p>
                                     </div>
 
                                     <div class="gallery__text-content">
-                                        <h2 class="gallery__heading">Swimming Pool</h2>
+                                        <h2 class="gallery__heading">Temple</h2>
                                         <p class="gallery__description">
-                                            Dive into luxury with our resort-style swimming pool. Perfect for relaxation
-                                            and
-                                            recreation, offering a refreshing escape right at your doorstep with
-                                            comfortable
-                                            lounge areas.
-                                        </p>
-                                    </div>
-
-                                    <div class="gallery__text-content">
-                                        <h2 class="gallery__heading">Gym Area</h2>
-                                        <p class="gallery__description">
-                                            Stay fit and healthy in our state-of-the-art fitness center. Equipped with
-                                            modern
-                                            equipment and professional trainers to help you achieve your wellness goals.
+                                            A peaceful retreat where devotion meets design.The temple stands as the
+                                            spiritual heart of the community, inviting calm and positivity into daily
+                                            life.Crafted with care and cultural grace, it’s a space that nurtures inner
+                                            peace. Here, every prayer finds a place and every moment feels blessed.
                                         </p>
                                     </div>
                                 </div>
@@ -1775,24 +1850,24 @@
             <div class="row mt-5">
                 <div class="col-12 col-lg-4">
                     <div class="">
-                        <img src="images/img-small.png" alt="" class="h-400px">
+                        <img src="images/event-1.webp" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-8">
                     <div class="">
-                        <img src="images/img-big.png" alt="" class="h-400px">
+                        <img src="images/event-2.webp" alt="">
                     </div>
                 </div>
             </div>
             <div class="row mt-2">
                 <div class="col-12 col-lg-8">
                     <div class="">
-                        <img src="images/img-big.png" alt="" class="h-400px">
+                        <img src="images/event-3.webp" alt="">
                     </div>
                 </div>
                 <div class="col-12 col-lg-4">
                     <div class="">
-                        <img src="images/img-small.png" alt="" class="h-400px">
+                        <img src="images/event-4.webp" alt="">
                     </div>
                 </div>
             </div>
@@ -1810,11 +1885,9 @@
                 <div class="col-12 col-xl-12 col-md-12 wow animate__fadeIn mt-5" data-wow-delay="0.2s"
                     style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
                     <p class="mt-md-4 text-medium line-height-28px Raleway-font text-blue text-center">
-                        Discover the perfect blend of space, style and functionality in our meticulously designed
-                        floor plans, crafted to provide spacious bedrooms with ample natural light, expansive living
-                        areas perfect for relaxation and entertainment, modern kitchens with sleek finishes and
-                        ample storage, luxurious bathrooms with premium fixtures and fittings, and efficient storage
-                        spaces throughout the home
+                        See how every corner is designed with purpose and precision. Each layout blends comfort, space,
+                        and style in perfect harmony. Explore the floor plan that fits not just your needs but your
+                        dreams.
                     </p>
                 </div>
             </div>
@@ -1972,9 +2045,10 @@
                     <h4
                         class="w-50percent alt-font text-extra-dark-gray font-weight-400  margin-15px-bottom lg-w-100 sm-margin-25px-bottom">
                         Milestones</h4>
-                    <p class="text-extra-dark-gray text-medium"> Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <p class="text-extra-dark-gray text-medium"> We believe great architecture begins with a strong
+                        vision and ends with lasting impact. Our projects blend contemporary design with timeless
+                        craftsmanship. Every detail is thoughtfully curated to elevate the way you live. Experience
+                        spaces built with passion, purpose, and perfection.
                     </p>
 
 
@@ -2014,7 +2088,7 @@
 
                         .quad__slider__image {
                             width: 100%;
-                            max-height: 484px;
+                            max-height: 437px;
                             object-fit: cover;
                             display: block;
                         }
@@ -2027,7 +2101,7 @@
                             bottom: 0;
                             padding: 18px 20px;
                             box-sizing: border-box;
-                            background: rgba(0, 0, 0, 0.3);
+                            background: rgba(0, 0, 0, 0.7);
                             /* semi-opaque bar */
                             color: #ffffff;
                             opacity: 0;
@@ -2046,9 +2120,9 @@
 
                         .quad__slider__subtitle {
                             margin: 0;
-                            font-size: 0.9rem;
+                            font-size: 16px;
                             opacity: 0.95;
-                            font-weight: 500;
+                            font-weight: 300;
                         }
 
                         /* show overlay on hover OR keyboard focus (accessibility) */
@@ -2159,91 +2233,58 @@
                             <div class="quad__slider__track" id="quadSliderTrack">
                                 <div class="quad__slider__item">
                                     <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project1.png" alt="Mountain Landscape"
+                                        <img src="images/orchid-plaza.webp" alt="Orchid Plaza"
                                             class="quad__slider__image">
                                         <!-- OVERLAY (appears on hover/focus) -->
                                         <div class="quad__slider__overlay" aria-hidden="false">
-                                            <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
+                                            <h5 class="quad__slider__title">Orchid Plaza</h5>
+                                            <p class="quad__slider__subtitle mt-3">Bearing/CTS/Survey/FinalPlot
+                                                No.: 118,111,112,113,115,116 and 118 at Betegoan - Boisar(E), Palghar -
+                                                401501
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quad__slider__item">
                                     <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project2.png" alt="Beach Paradise" class="quad__slider__image">
+                                        <img src="images/Sk-heights.webp" alt="S K Heights" class="quad__slider__image">
                                         <div class="quad__slider__overlay" aria-hidden="false">
-                                            <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
+                                            <h5 class="quad__slider__title">SK Heights</h5>
+                                            <p class="quad__slider__subtitle mt-3">Bearing No, 9, H, No-1,2,3,4,5 &6 at
+                                                Village Shelwali,
+                                                Palghar City.
+                                                Taluka- Palghar,
+                                                District- Palghar
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quad__slider__item">
                                     <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project3.png" alt="Desert Sunset" class="quad__slider__image">
+                                        <img src="images/Ommar-heights.webp" alt="Ommar Heights"
+                                            class="quad__slider__image">
                                         <div class="quad__slider__overlay" aria-hidden="false">
-                                            <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
+                                            <h5 class="quad__slider__title">Ommar Heights</h5>
+                                            <p class="quad__slider__subtitle mt-3">Bearing No, 9, H, No-1,2,3,5 &6 at
+                                                Village Shelwali, Palghar City, Palghar East.
+                                                Taluka- Palghar, District- Palghar
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="quad__slider__item">
                                     <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project4.png" alt="Forest Trail" class="quad__slider__image">
-                                        <div class="quad__slider__overlay" aria-hidden="false">
-                                            <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="quad__slider__item">
-                                    <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project1.png" alt="Alpine View" class="quad__slider__image">
-                                        <div class="quad__slider__overlay" aria-hidden="false">
-                                            <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="quad__slider__item">
-                                    <div class="quad__slider__image__wrapper" tabindex="0">
-                                        <img src="images/project2.png" alt="Tropical Island"
+                                        <img src="images/The-Sk-Residency.webp" alt="The SK Residency"
                                             class="quad__slider__image">
                                         <div class="quad__slider__overlay" aria-hidden="false">
                                             <h5 class="quad__slider__title">The SK residency</h5>
-                                            <p class="quad__slider__subtitle mt-3">Lorem ipsum dolor sit amet
-                                                consectetur
-                                                adipisicing elit. In corporis eius, sequi voluptates fugiat enim,
-                                                voluptatem ab non doloremque explicabo iste, culpa odio. Mollitia,
-                                                impedit quo omnis deleniti beatae asperiores?
+                                            <p class="quad__slider__subtitle mt-3">GS TOWNSHIP Bearing No. 9. H. No-1.2
+                                                & 6 at Village Shelwali, Palghar City
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
 
@@ -2857,9 +2898,9 @@
                     </div>
 
                     <div class="col-md-12 col-lg-12 text-center">
-                        <p class="text-gray mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                        <p class="text-gray mt-3">You’ve explored our world of design and quality now imagine living in
+                            it. Every project we create is more than a structure; it’s a lifestyle waiting to be lived.
+                            Don’t just admire the view make it your own. </p>
                     </div>
 
                     <div class="col-md-12 col-lg-12 text-center">
